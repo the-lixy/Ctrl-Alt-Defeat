@@ -1,0 +1,19 @@
+class test:
+    def __init__(id, contents):
+        self.id = id
+        self.contents = contents
+    
+post1 = (1, "This is cool")
+post2 = (2, "This is not cool")
+post3 = (3, "@myfriend")
+post4 = (4, "@myotherfriend would find this cool")
+posts = [post1, post2, post3, post4]
+
+def remove_tagged(posts):
+    output = []
+    for i in range(len(posts)):
+        if posts[i][1].find(' ') != -1 or posts[i][1][0] != '@':
+                output.append(posts[i][1])
+    return output
+
+print (remove_tagged(posts))
